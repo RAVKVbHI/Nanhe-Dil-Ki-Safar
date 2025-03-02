@@ -3,5 +3,17 @@ models: models.json
 custom_nodes: custom_nodes.json
 user_models: user_models.json
 user_custom_nodes: user_custom_nodes.json
-workflows: []
-normal_workflows: []
+workflows:
+  - id: alq97cjdkap
+    name: indian_girl_with_heart_api.json
+    file: flowscale_assets/indian_girl_with_heart_api.json
+    version: .nan
+    description: ''
+    inputs: []
+    outputs: []
+    skip_preprocess: true
+normal_workflows:
+  - id: 9ptynskl5ak
+    name: indian_girl_with_heart.json
+    file: flowscale_assets/indian_girl_with_heart.json
+    version: .nan
