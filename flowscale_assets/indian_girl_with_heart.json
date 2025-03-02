@@ -42,7 +42,8 @@
                 "cnr_id": "comfy-core",
                 "ver": "0.3.15",
                 "Node name for S&R": "VAEEncode"
-            }
+            },
+            "widgets_values": []
         },
         {
             "id": 14,
@@ -84,87 +85,8 @@
                 "cnr_id": "comfy-core",
                 "ver": "0.3.15",
                 "Node name for S&R": "VAEDecode"
-            }
-        },
-        {
-            "id": 19,
-            "type": "LoadImage",
-            "pos": [
-                -90.02403259277344,
-                120.59807586669922
-            ],
-            "size": [
-                315,
-                314
-            ],
-            "flags": {},
-            "order": 0,
-            "mode": 0,
-            "inputs": [],
-            "outputs": [
-                {
-                    "name": "IMAGE",
-                    "type": "IMAGE",
-                    "links": [
-                        17
-                    ],
-                    "slot_index": 0
-                },
-                {
-                    "name": "MASK",
-                    "type": "MASK",
-                    "links": null
-                }
-            ],
-            "properties": {
-                "cnr_id": "comfy-core",
-                "ver": "0.3.15",
-                "Node name for S&R": "LoadImage"
             },
-            "widgets_values": [
-                "bd1c6b80-5999-4b08-9e8b-a1eba03f4bba.jpg",
-                "image"
-            ]
-        },
-        {
-            "id": 12,
-            "type": "CLIPTextEncode",
-            "pos": [
-                320.27593994140625,
-                541.8980102539062
-            ],
-            "size": [
-                400,
-                200
-            ],
-            "flags": {},
-            "order": 3,
-            "mode": 0,
-            "inputs": [
-                {
-                    "name": "clip",
-                    "type": "CLIP",
-                    "link": 13
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "CONDITIONING",
-                    "type": "CONDITIONING",
-                    "links": [
-                        12
-                    ],
-                    "slot_index": 0
-                }
-            ],
-            "properties": {
-                "cnr_id": "comfy-core",
-                "ver": "0.3.15",
-                "Node name for S&R": "CLIPTextEncode"
-            },
-            "widgets_values": [
-                "Green Mark on eyebrow"
-            ]
+            "widgets_values": []
         },
         {
             "id": 10,
@@ -178,7 +100,7 @@
                 98
             ],
             "flags": {},
-            "order": 1,
+            "order": 0,
             "mode": 0,
             "inputs": [],
             "outputs": [
@@ -216,6 +138,86 @@
             },
             "widgets_values": [
                 "realisticVisionV60B1_v51VAE.ckpt"
+            ]
+        },
+        {
+            "id": 11,
+            "type": "CLIPTextEncode",
+            "pos": [
+                320.2760009765625,
+                225.09796142578125
+            ],
+            "size": [
+                400,
+                200
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "clip",
+                    "type": "CLIP",
+                    "link": 10
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CONDITIONING",
+                    "type": "CONDITIONING",
+                    "links": [
+                        11
+                    ],
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "cnr_id": "comfy-core",
+                "ver": "0.3.15",
+                "Node name for S&R": "CLIPTextEncode"
+            },
+            "widgets_values": [
+                "Image of an Indian Girl holding India Flag, beautiful smile, holding heart"
+            ]
+        },
+        {
+            "id": 19,
+            "type": "LoadImage",
+            "pos": [
+                775.1949462890625,
+                474.8908996582031
+            ],
+            "size": [
+                315,
+                314
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "IMAGE",
+                    "type": "IMAGE",
+                    "links": [
+                        17
+                    ],
+                    "slot_index": 0
+                },
+                {
+                    "name": "MASK",
+                    "type": "MASK",
+                    "links": null
+                }
+            ],
+            "properties": {
+                "cnr_id": "comfy-core",
+                "ver": "0.3.15",
+                "Node name for S&R": "LoadImage"
+            },
+            "widgets_values": [
+                "bd1c6b80-5999-4b08-9e8b-a1eba03f4bba.jpg",
+                "image"
             ]
         },
         {
@@ -270,21 +272,21 @@
                 "Node name for S&R": "KSampler"
             },
             "widgets_values": [
-                576901677843818,
+                499925334390024,
                 "randomize",
                 20,
                 8,
                 "euler",
                 "normal",
-                0.27
+                0.3
             ]
         },
         {
             "id": 20,
             "type": "SaveImage",
             "pos": [
-                1139.6197509765625,
-                526.1964721679688
+                1093.9202880859375,
+                512.7069091796875
             ],
             "size": [
                 315,
@@ -310,24 +312,24 @@
             ]
         },
         {
-            "id": 11,
+            "id": 12,
             "type": "CLIPTextEncode",
             "pos": [
-                320.2760009765625,
-                225.09796142578125
+                320.27593994140625,
+                541.8980102539062
             ],
             "size": [
                 400,
                 200
             ],
             "flags": {},
-            "order": 2,
+            "order": 3,
             "mode": 0,
             "inputs": [
                 {
                     "name": "clip",
                     "type": "CLIP",
-                    "link": 10
+                    "link": 13
                 }
             ],
             "outputs": [
@@ -335,7 +337,7 @@
                     "name": "CONDITIONING",
                     "type": "CONDITIONING",
                     "links": [
-                        11
+                        12
                     ],
                     "slot_index": 0
                 }
@@ -346,7 +348,7 @@
                 "Node name for S&R": "CLIPTextEncode"
             },
             "widgets_values": [
-                "Image of an Indian Girl holding India Flag, beautiful smile, holding heart"
+                "Green Mark on eyebrow"
             ]
         }
     ],
@@ -444,10 +446,10 @@
     "config": {},
     "extra": {
         "ds": {
-            "scale": 1.3513057093104057,
+            "scale": 3.186308177103591,
             "offset": [
-                261.2308601946312,
-                -124.28524956334172
+                -790.4384477565211,
+                -519.2262263518207
             ]
         }
     },
