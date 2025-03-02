@@ -36,12 +36,12 @@
     },
     "13": {
         "inputs": {
-            "seed": 576901677843818,
+            "seed": 499925334390024,
             "steps": 20,
             "cfg": 8,
             "sampler_name": "euler",
             "scheduler": "normal",
-            "denoise": 0.27,
+            "denoise": 0.3,
             "model": [
                 "10",
                 0
