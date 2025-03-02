@@ -1,7 +1,7 @@
 {
     "10": {
         "inputs": {
-            "ckpt_name": "AOM3A1.safetensors"
+            "ckpt_name": "realisticVisionV60B1_v51VAE.ckpt"
         },
         "class_type": "CheckpointLoaderSimple",
         "_meta": {
@@ -10,7 +10,7 @@
     },
     "11": {
         "inputs": {
-            "text": "",
+            "text": "Image of an Indian Girl holding India Flag, beautiful smile, holding heart",
             "clip": [
                 "10",
                 1
@@ -23,7 +23,11 @@
     },
     "12": {
         "inputs": {
-            "text": ""
+            "text": "Green Mark on eyebrow",
+            "clip": [
+                "10",
+                1
+            ]
         },
         "class_type": "CLIPTextEncode",
         "_meta": {
@@ -32,18 +36,26 @@
     },
     "13": {
         "inputs": {
-            "seed": 0,
+            "seed": 576901677843818,
             "steps": 20,
             "cfg": 8,
             "sampler_name": "euler",
             "scheduler": "normal",
-            "denoise": 1,
+            "denoise": 0.27,
+            "model": [
+                "10",
+                0
+            ],
             "positive": [
                 "11",
                 0
             ],
             "negative": [
                 "12",
+                0
+            ],
+            "latent_image": [
+                "18",
                 0
             ]
         },
@@ -53,24 +65,58 @@
         }
     },
     "14": {
-        "inputs": {},
+        "inputs": {
+            "samples": [
+                "13",
+                0
+            ],
+            "vae": [
+                "10",
+                2
+            ]
+        },
         "class_type": "VAEDecode",
         "_meta": {
             "title": "VAE Decode"
         }
     },
-    "15": {
-        "inputs": {},
+    "18": {
+        "inputs": {
+            "pixels": [
+                "19",
+                0
+            ],
+            "vae": [
+                "10",
+                2
+            ]
+        },
         "class_type": "VAEEncode",
         "_meta": {
             "title": "VAE Encode"
         }
     },
-    "16": {
-        "inputs": {},
-        "class_type": "PreviewImage",
+    "19": {
+        "inputs": {
+            "image": "bd1c6b80-5999-4b08-9e8b-a1eba03f4bba.jpg",
+            "upload": "image"
+        },
+        "class_type": "LoadImage",
         "_meta": {
-            "title": "Preview Image"
+            "title": "Load Image"
+        }
+    },
+    "20": {
+        "inputs": {
+            "filename_prefix": "ComfyUI",
+            "images": [
+                "14",
+                0
+            ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+            "title": "Save Image"
         }
     }
 }
