@@ -12,8 +12,20 @@ workflows:
     inputs: []
     outputs: []
     skip_preprocess: true
+  - id: vh4n29jg61d
+    name: instagram_influencer_api.json
+    file: ravi_test/instagram_influencer_api.json
+    version: 0
+    description: ''
+    inputs: []
+    outputs: []
+    skip_preprocess: true
 normal_workflows:
   - id: 9ptynskl5ak
     name: indian_girl_with_heart.json
     file: flowscale_assets/indian_girl_with_heart.json
     version: .nan
+  - id: sfi3918czaf
+    name: instagram_influencer.json
+    file: ravi_test/instagram_influencer.json
+    version: 0
