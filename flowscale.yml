@@ -23,7 +23,7 @@ workflows:
   - id: wnk0tou430e
     name: logo_v1_api.json
     file: flowscale_assets/logo_v1_api.json
-    version: 1
+    version: 0
     description: ''
     inputs: []
     outputs: []
@@ -40,4 +40,4 @@ normal_workflows:
   - id: qdipn351nl
     name: logo_v1.json
     file: flowscale_assets/logo_v1.json
-    version: 1
+    version: 0
