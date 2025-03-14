@@ -20,7 +20,7 @@
                 0
             ],
             "latent_image": [
-                "13",
+                "10",
                 0
             ]
         },
@@ -38,9 +38,20 @@
             "title": "Load Checkpoint"
         }
     },
+    "5": {
+        "inputs": {
+            "width": 520,
+            "height": 640,
+            "batch_size": 1
+        },
+        "class_type": "EmptyLatentImage",
+        "_meta": {
+            "title": "Empty Latent Image"
+        }
+    },
     "6": {
         "inputs": {
-            "text": "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,",
+            "text": "",
             "clip": [
                 "4",
                 1
@@ -53,7 +64,7 @@
     },
     "7": {
         "inputs": {
-            "text": "text, watermark",
+            "text": "",
             "clip": [
                 "4",
                 1
@@ -93,26 +104,30 @@
             "title": "Save Image"
         }
     },
-    "11": {
-        "inputs": {
-            "image": "Logo - Normal.png",
-            "upload": "image"
-        },
-        "class_type": "LoadImage",
-        "_meta": {
-            "title": "Load Image"
-        }
-    },
-    "13": {
+    "10": {
         "inputs": {
             "pixels": [
                 "11",
                 0
+            ],
+            "vae": [
+                "4",
+                2
             ]
         },
         "class_type": "VAEEncode",
         "_meta": {
             "title": "VAE Encode"
+        }
+    },
+    "11": {
+        "inputs": {
+            "image": "example.png",
+            "upload": "image"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+            "title": "Load Image"
         }
     }
 }
