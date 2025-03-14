@@ -3,138 +3,6 @@
     "last_link_id": 18,
     "nodes": [
         {
-            "id": 4,
-            "type": "CheckpointLoaderSimple",
-            "pos": [
-                40,
-                65
-            ],
-            "size": [
-                315,
-                98
-            ],
-            "flags": {},
-            "order": 0,
-            "mode": 0,
-            "inputs": [],
-            "outputs": [
-                {
-                    "name": "MODEL",
-                    "type": "MODEL",
-                    "links": [
-                        1
-                    ],
-                    "slot_index": 0
-                },
-                {
-                    "name": "CLIP",
-                    "type": "CLIP",
-                    "links": [
-                        3,
-                        5
-                    ],
-                    "slot_index": 1
-                },
-                {
-                    "name": "VAE",
-                    "type": "VAE",
-                    "links": [
-                        8,
-                        11
-                    ],
-                    "slot_index": 2
-                }
-            ],
-            "properties": {
-                "cnr_id": "comfy-core",
-                "ver": "0.3.15",
-                "Node name for S&R": "CheckpointLoaderSimple"
-            },
-            "widgets_values": [
-                "epicrealism_naturalSinRC1VAE.safetensors"
-            ]
-        },
-        {
-            "id": 6,
-            "type": "CLIPTextEncode",
-            "pos": [
-                415,
-                186
-            ],
-            "size": [
-                422.84503173828125,
-                164.31304931640625
-            ],
-            "flags": {},
-            "order": 2,
-            "mode": 0,
-            "inputs": [
-                {
-                    "name": "clip",
-                    "type": "CLIP",
-                    "link": 3
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "CONDITIONING",
-                    "type": "CONDITIONING",
-                    "links": [
-                        4
-                    ],
-                    "slot_index": 0
-                }
-            ],
-            "properties": {
-                "cnr_id": "comfy-core",
-                "ver": "0.3.15",
-                "Node name for S&R": "CLIPTextEncode"
-            },
-            "widgets_values": [
-                "Make pebbles whiye"
-            ]
-        },
-        {
-            "id": 7,
-            "type": "CLIPTextEncode",
-            "pos": [
-                413,
-                389
-            ],
-            "size": [
-                425.27801513671875,
-                180.6060791015625
-            ],
-            "flags": {},
-            "order": 3,
-            "mode": 0,
-            "inputs": [
-                {
-                    "name": "clip",
-                    "type": "CLIP",
-                    "link": 5
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "CONDITIONING",
-                    "type": "CONDITIONING",
-                    "links": [
-                        6
-                    ],
-                    "slot_index": 0
-                }
-            ],
-            "properties": {
-                "cnr_id": "comfy-core",
-                "ver": "0.3.15",
-                "Node name for S&R": "CLIPTextEncode"
-            },
-            "widgets_values": [
-                ""
-            ]
-        },
-        {
             "id": 8,
             "type": "VAEDecode",
             "pos": [
@@ -178,15 +46,58 @@
             "widgets_values": []
         },
         {
-            "id": 9,
-            "type": "SaveImage",
+            "id": 10,
+            "type": "VAEEncode",
             "pos": [
-                952,
-                382
+                225,
+                627
             ],
             "size": [
                 210,
-                270
+                46
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "pixels",
+                    "type": "IMAGE",
+                    "link": 10
+                },
+                {
+                    "name": "vae",
+                    "type": "VAE",
+                    "link": 11
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "LATENT",
+                    "type": "LATENT",
+                    "links": [
+                        16
+                    ],
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "cnr_id": "comfy-core",
+                "ver": "0.3.15",
+                "Node name for S&R": "VAEEncode"
+            },
+            "widgets_values": []
+        },
+        {
+            "id": 9,
+            "type": "SaveImage",
+            "pos": [
+                1013.8098754882812,
+                406.05169677734375
+            ],
+            "size": [
+                354,
+                381
             ],
             "flags": {},
             "order": 7,
@@ -205,6 +116,86 @@
             },
             "widgets_values": [
                 "ComfyUI"
+            ]
+        },
+        {
+            "id": 7,
+            "type": "CLIPTextEncode",
+            "pos": [
+                413,
+                389
+            ],
+            "size": [
+                425.27801513671875,
+                180.6060791015625
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "clip",
+                    "type": "CLIP",
+                    "link": 5
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CONDITIONING",
+                    "type": "CONDITIONING",
+                    "links": [
+                        6
+                    ],
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "cnr_id": "comfy-core",
+                "ver": "0.3.15",
+                "Node name for S&R": "CLIPTextEncode"
+            },
+            "widgets_values": [
+                "change other parts of image"
+            ]
+        },
+        {
+            "id": 6,
+            "type": "CLIPTextEncode",
+            "pos": [
+                415,
+                186
+            ],
+            "size": [
+                422.84503173828125,
+                164.31304931640625
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "clip",
+                    "type": "CLIP",
+                    "link": 3
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CONDITIONING",
+                    "type": "CONDITIONING",
+                    "links": [
+                        4
+                    ],
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "cnr_id": "comfy-core",
+                "ver": "0.3.15",
+                "Node name for S&R": "CLIPTextEncode"
+            },
+            "widgets_values": [
+                "add grains to coal to make it look real"
             ]
         },
         {
@@ -259,64 +250,73 @@
                 "Node name for S&R": "KSampler"
             },
             "widgets_values": [
-                1021659788587256,
-                "randomize",
+                307569772221026,
+                "increment",
+                50,
                 20,
-                8,
                 "euler",
                 "normal",
-                0.1
+                0.2
             ]
         },
         {
-            "id": 10,
-            "type": "VAEEncode",
+            "id": 4,
+            "type": "CheckpointLoaderSimple",
             "pos": [
-                225,
-                627
+                40,
+                65
             ],
             "size": [
-                210,
-                46
+                315,
+                98
             ],
             "flags": {},
-            "order": 4,
+            "order": 0,
             "mode": 0,
-            "inputs": [
-                {
-                    "name": "pixels",
-                    "type": "IMAGE",
-                    "link": 10
-                },
-                {
-                    "name": "vae",
-                    "type": "VAE",
-                    "link": 11
-                }
-            ],
+            "inputs": [],
             "outputs": [
                 {
-                    "name": "LATENT",
-                    "type": "LATENT",
+                    "name": "MODEL",
+                    "type": "MODEL",
                     "links": [
-                        16
+                        1
                     ],
                     "slot_index": 0
+                },
+                {
+                    "name": "CLIP",
+                    "type": "CLIP",
+                    "links": [
+                        3,
+                        5
+                    ],
+                    "slot_index": 1
+                },
+                {
+                    "name": "VAE",
+                    "type": "VAE",
+                    "links": [
+                        8,
+                        11
+                    ],
+                    "slot_index": 2
                 }
             ],
             "properties": {
                 "cnr_id": "comfy-core",
                 "ver": "0.3.15",
-                "Node name for S&R": "VAEEncode"
+                "Node name for S&R": "CheckpointLoaderSimple"
             },
-            "widgets_values": []
+            "widgets_values": [
+                "epicrealismXL_v8Kiss.safetensors"
+            ]
         },
         {
             "id": 11,
             "type": "LoadImage",
             "pos": [
-                -9,
-                225
+                -137.7000274658203,
+                239.300048828125
             ],
             "size": [
                 315,
@@ -447,10 +447,10 @@
     "config": {},
     "extra": {
         "ds": {
-            "scale": 1,
+            "scale": 0.9090909090909095,
             "offset": [
-                25,
-                15
+                168.25845596964626,
+                -19.221906527356154
             ]
         }
     },
