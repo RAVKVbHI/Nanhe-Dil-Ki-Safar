@@ -1,12 +1,12 @@
 {
     "3": {
         "inputs": {
-            "seed": 1021659788587256,
-            "steps": 20,
-            "cfg": 8,
+            "seed": 307569772221026,
+            "steps": 50,
+            "cfg": 20,
             "sampler_name": "euler",
             "scheduler": "normal",
-            "denoise": 0.1,
+            "denoise": 0.2,
             "model": [
                 "4",
                 0
@@ -31,7 +31,7 @@
     },
     "4": {
         "inputs": {
-            "ckpt_name": "epicrealism_naturalSinRC1VAE.safetensors"
+            "ckpt_name": "epicrealismXL_v8Kiss.safetensors"
         },
         "class_type": "CheckpointLoaderSimple",
         "_meta": {
@@ -40,7 +40,7 @@
     },
     "6": {
         "inputs": {
-            "text": "Make pebbles whiye",
+            "text": "add grains to coal to make it look real",
             "clip": [
                 "4",
                 1
@@ -53,7 +53,7 @@
     },
     "7": {
         "inputs": {
-            "text": "",
+            "text": "change other parts of image",
             "clip": [
                 "4",
                 1
